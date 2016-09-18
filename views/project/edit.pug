@@ -1,0 +1,17 @@
+extends ../layout
+
+block content
+  form(method='post', action="/project/" + project._id + "?_method=patch")
+    .form-group
+      label(for='title') Title
+      input.form-control#title(name='title' value=project.title)
+    .form-group
+      label(for='price') Price
+      input.form-control.bfh-number#price(name='price', value= project.price type='number')
+    .form-group
+      label(for='description') description
+      input.form-control#description(name='description', value=project.description)
+        //- project.description
+        //- span=project.description
+
+    input.btn.btn-primary(type='submit')

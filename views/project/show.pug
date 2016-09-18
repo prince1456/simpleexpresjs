@@ -1,0 +1,18 @@
+extends ../layout
+
+block content
+  h1= project.title
+  p= project.description
+  h3= project.price
+  h4= project.category
+
+  form(method='POST', action="/project/" + project._id + "?_method=DELETE")
+    input.btn.btn-danger(type="submit", value="delete")
+  a.btn.btn-info(href= project._id  + "/edit") edit
+  h2= comments
+    form(method='POST', action='/project/' + project._id + "/comments")
+      .form-group
+        textarea.form-control(name="body")
+      input.btn.btn-primary(type="submit", value="submit comment")
+  each comment in project.comments
+    .well= comment.body

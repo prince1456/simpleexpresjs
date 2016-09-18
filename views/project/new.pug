@@ -1,0 +1,31 @@
+
+extend ../layout
+
+block content
+  .row
+    .col-md-4
+      h1.main-header#question-title Project
+
+      p Add Project.
+      div#message
+
+    .col-md-8
+      form#newproject(method='POST', action='/project')
+        .form-group
+          label(for='title') Title
+          input.form-control#title(name='title')
+        .form-group
+          label(for='price') Price
+          input.form-control.bfh-number#price(name='price', type='number')
+        .form-group
+          label(for='categories') categories
+          select.form-control
+            each category, i in categories
+              option#categorie(value=i) #{category}
+        .form-group
+          label(for='description') description
+          textarea.form-control#description(name='description')
+        input.btn.btn-primary(type='submit')
+
+
+    div#message

@@ -1,0 +1,37 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js")
+    script(src='/javascripts/bootstrap.js')
+
+  body
+    nav.navbar.navbar-inverse
+        .container
+          .navbar-header
+            button.navbar-toggle.collapsed(data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar")
+              span.sr-only Toggle navigation
+              span.icon-bar
+              span.icon-bar
+              span.icon-bar
+            a.navbar-brand  Project #{Title}
+          div#navbar.collapse.navbar-collapse
+            ul.nav.navbar-nav
+              li
+                a.home(href="/") Home
+              li
+                a.home(href="/contact/contact") Contact
+              li
+                a.home(href="/project/new") Project
+              li
+                a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false") Products
+                  span.caret
+                ul.dropdown-menu
+                  li
+                    a.home(href="/") New Product
+                  li
+                    a.home(href="/contact") All Products
+
+    block content
